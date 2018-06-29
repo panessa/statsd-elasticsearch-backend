@@ -1,4 +1,4 @@
-curl -XPUT "${ES_PROTOCOL}://${ES_USERNAME}:${ES_PASSWORD}@${ES_HOST:-localhost}:${ES_PORT:-9200}/_template/statsd-template" -d '
+curl --header "content-type: application/JSON" -XPUT "${ES_PROTOCOL:-http}://${ES_USERNAME}:${ES_PASSWORD}@${ES_HOST:-localhost}:${ES_PORT:-9200}/_template/statsd-template" -d '
 {
     "template" : "statsd-*",
     "settings" : {
